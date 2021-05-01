@@ -32,10 +32,6 @@ const WrapperImages = styled.section`
 function App() {
   const [images, setImage] = useState([]);
 
-  useEffect(() => {
-    fetchImages();
-  }, [fetchImages]);
-
   const fetchImages = ((count = 15) => {
     const apiRoot = "https://api.unsplash.com";
     const accessKey = process.env.REACT_APP_ACCESSKEY;
@@ -48,6 +44,10 @@ function App() {
         setImage([...images, ...res.data]);
       });
   });
+
+    useEffect(() => {
+      fetchImages();
+    }, []);
 
   return (
     <div>
