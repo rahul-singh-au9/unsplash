@@ -36,7 +36,7 @@ function App() {
     fetchImages();
   }, [fetchImages]);
 
-  const fetchImages = useCallback((count = 15) => {
+  const fetchImages = ((count = 15) => {
     const apiRoot = "https://api.unsplash.com";
     const accessKey = process.env.REACT_APP_ACCESSKEY;
 
